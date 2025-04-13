@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowLeft } from "lucide-react";
 import Footer from "@/components/footer";
 import emailjs from '@emailjs/browser';
+import Background from '@/components/background';
 
 export default function Contact() {
   useEffect(() => {
@@ -62,7 +63,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0a0a0a]">
+    <div className="min-h-screen bg-transparent">
+      <Background />
       <main className="container mx-auto px-4 py-8">
         {/* Back Button */}
         <Link href="/" className="inline-flex items-center text-[#666666] dark:text-[#a7a7a7] hover:text-[#1e0e62] dark:hover:text-[#00d8ff] mb-8">

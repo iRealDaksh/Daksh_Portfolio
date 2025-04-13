@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Footer from '@/components/footer';
+import Background from '@/components/background';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#191919] text-[#42446e] dark:text-white">
+    <div className="min-h-screen bg-transparent text-[#42446e] dark:text-white">
+      <Background />
       {/* Back to Home Button */}
       <div className="container mx-auto px-4 pt-6">
         <motion.div

@@ -9,6 +9,7 @@ import { useTheme } from "next-themes"
 import { Github, Linkedin } from "lucide-react"
 import { useState, useEffect } from "react"
 import MobileMenu from "@/components/mobile-menu"
+import Background from "@/components/background"
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
@@ -46,7 +47,8 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#191919] text-[#42446e] dark:text-white">
+    <div className="min-h-screen bg-transparent text-[#42446e] dark:text-white relative">
+      <Background />
       <MobileMenu 
         isOpen={mobileMenuOpen} 
         onClose={() => setMobileMenuOpen(false)} 
@@ -54,7 +56,7 @@ export default function Home() {
       />
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/30 dark:bg-[#191919]/30 backdrop-blur-md border-b border-white/20 dark:border-[#2a2a2a]">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
