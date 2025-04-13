@@ -15,6 +15,13 @@ export default function Home() {
   const { theme, setTheme } = useTheme()
   const [activeSection, setActiveSection] = useState("Home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    // Set initial theme to dark
+    setTheme('dark')
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +52,11 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div className="min-h-screen bg-transparent text-[#42446e] dark:text-white relative">
